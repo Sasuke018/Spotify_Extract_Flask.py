@@ -11,8 +11,8 @@ import pymssql
 app=Flask(__name__)
 app.secret_key= '123456789'
 
-CLIENT_ID='0da0394d186b44808b91e630ef7a9a08'
-CLIENT_SECRET='69cac00a6f1144a881cefb5ed4b4309c'
+CLIENT_ID='Your client_id'
+CLIENT_SECRET='your client_secret'
 REDIRECT_URI='http://localhost:5000/callback'
 
 AUTH_URL='https://accounts.spotify.com/authorize'
@@ -91,9 +91,9 @@ def get_artists():
     response=requests.get(API_BASE_URL+ 'me/top/artists',headers=headers)
     artists=response.json()
     conn = pymssql.connect(
-        server='SASUKE',         
-        user='sashank',         
-        password='Sreedevi@1972',     
+        server='Server',         
+        user='username',         
+        password='password',     
         database='Demo'               
     )
     cursor = conn.cursor()
